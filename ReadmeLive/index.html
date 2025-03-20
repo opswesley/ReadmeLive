@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReadmeLive - Editor Markdown</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/18008/18008297.png">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg class="logo-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      ReadmeLive
+    </div>
+  </header>
+  <div class="container">
+    <div class="editor">
+      <div class="toolbar">
+        <button onclick="applyFormatting('bold')" title="Negrito (**texto**)"><i class="fas fa-bold"></i></button>
+        <button onclick="applyFormatting('italic')" title="Itálico (*texto*)"><i class="fas fa-italic"></i></button>
+        <button onclick="applyFormatting('h1')" title="Cabeçalho 1 (#)"><i class="fas fa-heading"></i></button>
+        <button onclick="applyFormatting('h2')" title="Cabeçalho 2 (##)"><i class="fas fa-heading"></i></button>
+        <button onclick="applyFormatting('h3')" title="Cabeçalho 3 (###)"><i class="fas fa-heading"></i></button>
+        <button onclick="applyFormatting('ul')" title="Lista não ordenada (-)"><i class="fas fa-list-ul"></i></button>
+        <button onclick="applyFormatting('ol')" title="Lista ordenada (1.)"><i class="fas fa-list-ol"></i></button>
+        <button onclick="applyFormatting('link')" title="Link ([texto](url))"><i class="fas fa-link"></i></button>
+        <button onclick="applyFormatting('image')" title="Imagem (![alt](url))"><i class="fas fa-image"></i></button>
+        <button onclick="applyFormatting('code')" title="Código inline (`code`)"><i class="fas fa-code"></i></button>
+        <button onclick="applyFormatting('codeblock')" title="Bloco de código (```)"><i class="fas fa-code"></i></button>
+        <button onclick="toggleDarkMode()" title="Alternar modo escuro"><i class="fas fa-moon"></i></button>
+        <button onclick="saveContent()" title="Salvar conteúdo"><i class="fas fa-save"></i></button>
+      </div>
+      <textarea id="markdown-input" placeholder="Digite seu Markdown aqui... Use APENAS links diretos de imagens (ex.: https://i.postimg.cc/2Vy54sy6/moodtrack-preview.png)"></textarea>
+    </div>
+    <div class="preview" id="markdown-output"></div>
+  </div>
+  <footer>
+    <p>Desenvolvido por <a href="https://github.com/opswesley" target="_blank">opswesley</a></p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
